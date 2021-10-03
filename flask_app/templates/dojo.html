@@ -44,7 +44,7 @@
 </head>
 
 <body class="bg-secondary">
-  <h3 class="{{dojo.name}} Ninjas"></h3>
+  <h3 class="">{{dojo.name}} Ninjas</h3>
   <table class="table table-primary table-striped mt-2">
     <thead>
       <tr>
@@ -54,7 +54,7 @@
       </tr>
     </thead>
     <tbody>
-      {% for ninja in ninjas %}
+      {% for ninja in dojo.ninjas %}
       <tr>
         <td>{{ninja.first_name}}</td>
         <td>{{ninja.last_name}}</td>
