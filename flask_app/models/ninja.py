@@ -10,7 +10,6 @@ class Ninja:
         self.updated_at = data['updated_at']
 
     @classmethod
-    def save(cls, data):
-        query = "INSERT INTO ninjas ( first_name , last_name , age , dojo_id ) VALUES ( %(first_name)s , %(last_name)s , %(age)s , %(dojo_id)s;"
-        # data is a dictionary that will be passed into the save method from server.py
-        return connectToMySQL('dojos_and_ninjas_schema').query_db( query, data )
+    def save(cls,data):
+        query = "INSERT INTO ninjas (first_name, last_name,age,dojo_id) VALUES (%(first_name)s, %(last_name)s, %(age)s, %(dojo_id)s);"
+        return connectToMySQL('dojo_ninjas').query_db(query,data)

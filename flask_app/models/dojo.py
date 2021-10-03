@@ -14,8 +14,8 @@ class Dojo:
         query = "SELECT * FROM dojos;"
         results = connectToMySQL('dojos_and_ninjas_schema').query_db(query)
         dojos = []
-        for dojo in results:
-            dojos.append( cls(dojo) )
+        for row in results:
+            dojos.append( cls(row) )
         return dojos
 
     @classmethod

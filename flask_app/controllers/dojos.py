@@ -1,14 +1,15 @@
 from flask_app import app
-from flask import render_template,redirect,request, session, flash
+from flask import render_template,redirect,request
 from flask_app.models.dojo import Dojo
 
 @app.route("/")
 def index():
-    return render_template('index.html')
+    return redirect('/dojos')
 
 @app.route('/dojos')
 def dojos():
-    return render_template('dojo.html', dojos=Dojo.get_all())
+    dojos = Dojo.get_all()
+    return render_template('index.html', all_dojos = dojos)
 
 # Adding a new dojo to the list
 @app.route('/create/dojo', methods=["POST"])
