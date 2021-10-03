@@ -12,4 +12,4 @@ class Ninja:
     @classmethod
     def save(cls,data):
         query = "INSERT INTO ninjas (first_name, last_name,age,dojo_id) VALUES (%(first_name)s, %(last_name)s, %(age)s, %(dojo_id)s);"
-        return connectToMySQL('dojo_ninjas').query_db(query,data)
+        return connectToMySQL('dojos_and_ninjas_schema').query_db(query,data)
